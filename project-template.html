@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Alpha — Your Name</title>
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <a href="portfolio.html" class="nav-logo">Y<span>.</span>Name</a>
+    <a href="portfolio.html#projects" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Projects
+    </a>
+  </header>
+
+
+  <!-- ── HERO ── -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <div class="breadcrumb">
+        <a href="portfolio.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="portfolio.html#projects">Projects</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Project Alpha</span>
+      </div>
+
+      <span class="project-hero-tag">Web App</span>
+      <h1 class="project-hero-title">Project Alpha</h1>
+      <p class="project-hero-subtitle">A fully responsive dashboard with real-time data updates.</p>
+
+      <div class="project-meta-row">
+        <div class="meta-item">
+          <span class="meta-label">Jahr</span>
+          <span class="meta-value">2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Monat</span>
+          <span class="meta-value">März</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Rolle</span>
+          <span class="meta-value">Lead Developer</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Zeitdauer</span>
+          <span class="meta-value">3 Monate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main screenshot -->
+    <div class="container">
+      <div class="main-screenshot">
+        <div class="screenshot-chrome">
+          <div class="chrome-dots">
+            <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+          </div>
+          <div class="chrome-bar"></div>
+        </div>
+        <div class="screenshot-placeholder">
+          <!-- Replace this div with: <img src="screenshots/project-1-main.jpg" alt="Project Alpha main view" /> -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Main Screenshot (1200×630)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── BODY ── -->
+  <section style="padding: 1rem 0 0;">
+    <div class="container">
+      <div class="project-body">
+
+        <!-- ── DESCRIPTION + GALLERY ── -->
+        <div>
+          <div class="project-description reveal">
+            <h2>Overview</h2>
+            <p>
+              Project Alpha is a fully responsive analytics dashboard built with React and TypeScript.
+              It connects to a WebSocket-powered backend, delivering real-time chart updates and
+              live KPI tracking without any page reloads.
+            </p>
+            <p>
+              The goal was to replace a clunky legacy reporting tool with something that non-technical
+              stakeholders could use confidently — fast to load, intuitive to navigate, and genuinely
+              pleasant to look at.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul>
+              <li>Real-time data streaming via WebSocket — charts update live as events arrive.</li>
+              <li>Role-based access control with three permission tiers.</li>
+              <li>Fully responsive from 320 px to 4K monitors.</li>
+              <li>Dark / light mode toggle persisted to localStorage.</li>
+              <li>CSV and PDF export for every chart and table.</li>
+              <li>Automated test coverage above 85 % using Vitest &amp; Playwright.</li>
+            </ul>
+
+            <h2>Challenges &amp; Solutions</h2>
+            <p>
+              The biggest challenge was managing high-frequency WebSocket messages without tanking
+              render performance. The solution was a custom debounced event queue that batches
+              incoming data into 200 ms windows before committing to React state — keeping the UI
+              silky smooth even at 500+ events/second.
+            </p>
+            <p>
+              Accessibility was a second focus area: every interactive element passes WCAG 2.1 AA,
+              and keyboard navigation was validated with screen-reader testing on NVDA and VoiceOver.
+            </p>
+          </div>
+
+          <!-- Gallery -->
+          <div class="gallery-section reveal reveal-delay-1">
+            <h2>Screenshots</h2>
+            <div class="gallery-grid">
+
+              <div class="gallery-item" onclick="openLightbox(this)">
+                <!-- Replace: <img src="screenshots/project-1-overview.jpg" alt="Dashboard overview" /> -->
+                <div class="gallery-placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span>Overview (1200×500)</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" onclick="openLightbox(this)">
+                <!-- Replace: <img src="screenshots/project-1-charts.jpg" alt="Charts view" /> -->
+                <div class="gallery-placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                  </svg>
+                  <span>Charts (600×375)</span>
+                </div>
+              </div>
+
+              <div class="gallery-item" onclick="openLightbox(this)">
+                <!-- Replace: <img src="screenshots/project-1-mobile.jpg" alt="Mobile view" /> -->
+                <div class="gallery-placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="7" y="2" width="10" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/>
+                  </svg>
+                  <span>Mobile (600×375)</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SIDEBAR ── -->
+        <aside class="project-sidebar reveal">
+
+          <!-- Links -->
+          <div class="sidebar-card">
+            <h3>Links</h3>
+            <div class="sidebar-links">
+              <a href="https://github.com/yourhandle/project-alpha" target="_blank" rel="noopener" class="sidebar-link sidebar-link-github">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>View on GitHub</span>
+                <span class="sidebar-link-arrow">↗</span>
+              </a>
+              <a href="https://project-alpha.yourname.dev" target="_blank" rel="noopener" class="sidebar-link sidebar-link-demo">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span>Live Demo</span>
+                <span class="sidebar-link-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tech stack -->
+          <div class="sidebar-card">
+            <h3>Tech Stack</h3>
+            <div class="sidebar-info-list">
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Frontend</span>
+                <span class="sidebar-info-val">React + TypeScript</span>
+              </div>
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Styling</span>
+                <span class="sidebar-info-val">Tailwind CSS</span>
+              </div>
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Backend</span>
+                <span class="sidebar-info-val">Node.js + WS</span>
+              </div>
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Database</span>
+                <span class="sidebar-info-val">PostgreSQL</span>
+              </div>
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Hosting</span>
+                <span class="sidebar-info-val">Vercel + Railway</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project info -->
+          <div class="sidebar-card">
+            <h3>Details</h3>
+            <div class="sidebar-info-list">
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Type</span>
+                <span class="sidebar-info-val">Web App</span>
+              </div>
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Year</span>
+                <span class="sidebar-info-val">2024</span>
+              </div>
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Team size</span>
+                <span class="sidebar-info-val">Solo</span>
+              </div>
+              <div class="sidebar-info-row">
+                <span class="sidebar-info-key">Status</span>
+                <span class="sidebar-info-val"><span class="status-badge">Live</span></span>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── PREV / NEXT ── -->
+  <nav class="project-nav" aria-label="Project navigation">
+    <a href="project-6.html" class="proj-nav-btn prev">
+      <span class="proj-nav-label">← Previous</span>
+      <span class="proj-nav-title">Auth Library</span>
+    </a>
+    <a href="project-2.html" class="proj-nav-btn next">
+      <span class="proj-nav-label">Next →</span>
+      <span class="proj-nav-title">Data Pipeline</span>
+    </a>
+  </nav>
+
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo">Y<span>.</span>Name</div>
+    <p class="footer-copy">&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">✕ Close</button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+  </div>
+
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    reveals.forEach(el => io.observe(el));
+
+    // Lightbox — works with placeholder divs AND real <img> tags
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      const lb  = document.getElementById('lightbox');
+      const lbi = document.getElementById('lightbox-img');
+      if (img) {
+        lbi.src = img.src;
+        lbi.alt = img.alt;
+        lb.classList.add('active');
+      }
+      // If no real image yet (placeholder), do nothing or show a hint
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+
+</body>
+</html>

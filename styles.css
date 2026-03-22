@@ -516,6 +516,12 @@
       position: relative;
     }
 
+    @media (max-width: 767px) {
+      .about-photo {
+        max-height: 280px;
+      }
+    }
+
     .about-photo {
       aspect-ratio: 4 / 5;
       border-radius: calc(var(--radius) * 2);
